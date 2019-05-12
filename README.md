@@ -1,6 +1,15 @@
 # MyDiary
 ASP.NET Core MVC Diary with tests
 
+## Running application: 
+
+`dotnet run`
+
+## Running unit tests
+
+`dotnet test`
+
+
 ## Architecture
 - MVC
 - ViewModel pattern
