@@ -1,0 +1,47 @@
+﻿@model MyDiary.VIewModel.ArticleAndCommentsViewModel
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+@{
+    ViewData["Title"] = "Details";
+}
+<div>
+    <h4>Article</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Article.Title)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Article.Title)
+        </dd>
+    </dl>
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Article.Content)
+        </dt>
+        <dd class="col-sm-10">
+            <format-text>@Html.DisplayFor(model => model.Article.Content)</format-text>
+        </dd>
+    </dl>
+</div>
+<div>
+    @if (SignInManager.IsSignedIn(User) && (this.User.IsInRole("Admin")))
+    {
+        <a asp-action="Edit" asp-route-id="@Model.Article.Id">Edit |</a>
+    }
+    <a asp-action="Index">Back to List</a> |
+    @if (SignInManager.IsSignedIn(User))
+    {
+        <a asp-controller="Comments" asp-action="Create" asp-route-id="@Model.Article.Id">Add a comment</a>
+    }
+</div>
+<br><b>Comments</b><br><br>
+<div>
+    <table class="table">
+        @foreach (var item in Model.Comments)
+        {
+            @await Html.PartialAsync("_CommentPartial", item);
+        }
+    </table>
+</div>

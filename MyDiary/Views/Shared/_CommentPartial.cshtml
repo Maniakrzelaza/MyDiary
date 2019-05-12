@@ -1,0 +1,21 @@
+﻿@model MyDiary.Models.Comment
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+<tr>
+    <td>
+        @Model.Content
+    </td>
+    <td>
+        By: @(await UserManager.FindByIdAsync(@Model.Author_id))
+    </td>
+
+    @if (SignInManager.IsSignedIn(User) && (this.User.IsInRole("Admin")))
+    {
+        <td>
+            <a asp-controller="Comments" asp-action="Edit" asp-route-id="@Model.Id">Edit |</a>
+            <a asp-controller="Comments" asp-action="Delete" asp-route-id="@Model.Id">Delete |</a>
+        </td>
+
+    }
+</tr>
