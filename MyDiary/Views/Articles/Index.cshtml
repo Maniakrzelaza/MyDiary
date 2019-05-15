@@ -27,12 +27,12 @@
     <tbody>
         @foreach (var item in Model)
         {
-        <tr>
-            <td>
+        <tr class="article-row">
+            <td class="article-title">
                 @Html.DisplayFor(modelItem => item.Title)
             </td>
            
-            <td>
+            <td class="article-buttons">
                 @if (SignInManager.IsSignedIn(User) && (this.User.IsInRole("Admin")))
                 {
                         <a asp-action="Edit" asp-route-id="@item.Id">Edit | </a> 
