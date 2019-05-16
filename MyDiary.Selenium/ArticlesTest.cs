@@ -18,7 +18,7 @@ namespace MyDiary.Selenium
             {
                 AcceptInsecureCertificates = true
             };
-            options.AddArgument("--headless");
+           // options.AddArgument("--headless");
             Driver = new FirefoxDriver(Environment.CurrentDirectory + @"/drivers/", options);
             Driver.Url = "https://127.0.0.1:5001/";
         }

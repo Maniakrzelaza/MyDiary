@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyDiary.Tests", "MyDiary.Te
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyDiary.Selenium", "MyDiary.Selenium\MyDiary.Selenium.csproj", "{6866F308-4D7B-4244-B13C-7AA07B1347CF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyDiary.CodedUI", "MyDiary.CodedUI\MyDiary.CodedUI.csproj", "{7E946DE4-7D62-45C6-8B8A-88099F5E439D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyDiary.CodedUI", "MyDiary.CodedUI\MyDiary.CodedUI.csproj", "{FD52589C-9F71-4217-AA73-0A8740497DBD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +29,10 @@ Global
 		{6866F308-4D7B-4244-B13C-7AA07B1347CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6866F308-4D7B-4244-B13C-7AA07B1347CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6866F308-4D7B-4244-B13C-7AA07B1347CF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7E946DE4-7D62-45C6-8B8A-88099F5E439D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7E946DE4-7D62-45C6-8B8A-88099F5E439D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7E946DE4-7D62-45C6-8B8A-88099F5E439D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7E946DE4-7D62-45C6-8B8A-88099F5E439D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD52589C-9F71-4217-AA73-0A8740497DBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD52589C-9F71-4217-AA73-0A8740497DBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD52589C-9F71-4217-AA73-0A8740497DBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD52589C-9F71-4217-AA73-0A8740497DBD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

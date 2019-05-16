@@ -18,7 +18,7 @@ namespace Tests
             {
                 AcceptInsecureCertificates = true
             };
-            options.AddArgument("--headless");
+           // options.AddArgument("--headless");
             Driver = new FirefoxDriver(Environment.CurrentDirectory + @"/drivers/", options);
         }
 
@@ -44,6 +44,20 @@ namespace Tests
             IWebElement loginButton = Driver.FindElement(By.CssSelector("li.nav-item:nth-child(2) > a:nth-child(1)"));
 
             Assert.AreEqual("Login", loginButton.Text);
+        }
+        [Test]
+        public void ShouldDisplayInvalidMessageWhenLoginFails()
+        {
+            Driver.Url = @"https:/127.0.0.1:5001/Identity/Account/Login";
+            IWebElement email = Driver.FindElement(By.Id("Input_Email"));
+            email.SendKeys("badinpu@gmail.com");
+            IWebElement password = Driver.FindElement(By.Id("Input_Password"));
+            password.SendKeys("badpassword");
+            IWebElement submitButton = Driver.FindElement(By.XPath("/html/body/div/main/div[2]/div/div/div[1]/section/form/div[5]/button"));
+            submitButton.Click();
+            IWebElement errorMessage = Driver.FindElement(By.XPath("/html/body/div/main/div[2]/div/div/div[1]/section/form/div[1]/ul/li"));
+
+            Assert.AreEqual("Invalid login attempt.", errorMessage.Text);
         }
         [TearDown]
         public void TearDown()
